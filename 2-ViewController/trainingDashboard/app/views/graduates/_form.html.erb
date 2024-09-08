@@ -1,0 +1,37 @@
+<%= form_with(model: graduate) do |form| %>
+  <% if graduate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(graduate.errors.count, "error") %> prohibited this graduate from being saved:</h2>
+
+      <ul>
+        <% graduate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_role %>
+    <%= form.text_field :job_role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :batch_id %>
+    <%= form.text_field :batch_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

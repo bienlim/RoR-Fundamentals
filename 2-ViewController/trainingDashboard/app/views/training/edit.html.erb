@@ -1,0 +1,10 @@
+<h1>Edit Training</h1>
+
+<form action="/training/<%= @training.id %>" method="post">
+    <input type="number" name="training[batch]" value="<%= @training.batch %>">
+    <input type="date" name="training[start]" value="<%= @training.start %>">
+    <input type="date" name="training[end]" value="<%= @training.end %>">
+    <input type="hidden" name="_method" value="patch">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <input type="submit" value="Update Training">
+</form>

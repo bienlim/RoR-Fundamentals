@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @graduate.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @graduate.last_name %>
+</p>
+
+<p>
+  <strong>Job role:</strong>
+  <%= @graduate.job_role %>
+</p>
+
+<p>
+  <strong>Batch:</strong>
+  <%= @graduate.training_id %>
+</p>
+
+<a href="/training/<%= @id2 %>/graduates/<%=@graduate.id %>/edit">Edit</a> |
+<a href="/training/<%= @id2 %>">Back</a>

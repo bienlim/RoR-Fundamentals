@@ -1,0 +1,13 @@
+<h1>Login User</h1>
+<p id="notice"><%= notice %></p>
+<form action="users/loginProcess" method="POST">
+
+    <p>Username:</p>
+    <input type="text" name="user[username]" class="form-control" id="username">
+    <p>Password:</p>
+    <input type="password" name="user[password]" class="form-control" id="password">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <input type="submit" value="Log In" class="btn btn-primary">
+</form>
+
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,48 @@
+
+<%= content_for :left_column do%>
+    <h1>Posts#index</h1>
+    <p>Find me in app/views/posts/index.html.erb</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content name</th>
+                <th>by user</th>
+            </tr>
+        </thead>
+        <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.title %></td>
+                <td><%= post.content %></td>
+                <td><%= post.user_id %></td>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<%= content_for :middle_column do%>
+    <h1>Post#new</h1>
+    <p>Find me in app/views/posts/new.html.erb</p>
+<form action="/users" method="post">
+<label class="form-control mt-2"> Title
+    <input type="text" name="user[first_name]" class="form-control">
+</label>
+<label class="form-control mt-2"> Content
+    <input type="text" name="user[last_name]" class="form-control">
+</label>
+<label class="form-control mt-2"> By User
+<input type="text" name="user[favorite_language]" class="form-control">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+</label>
+<input type="submit" value="Add Post" class="btn btn-primary mt-2">
+</form>
+<% end %>
+
+<%= content_for :right_column do%>
+    <h1>Posts#backlinks</h1>
+    <p>Find me in app/views/users/new.html.erb</p>
+<div class="d-flex flex-row-reverse">
+    <a href="../users/index" class="btn btn-light"> View User </a>
+</div>
+
+<% end %>

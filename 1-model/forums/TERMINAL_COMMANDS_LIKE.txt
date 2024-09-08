@@ -1,0 +1,18 @@
+Like.create(likeable:User.first)
+Like.create(likeable:Forum.first)
+Like.create(likeable:Answer.first)
+Like.create(likeable:Question.first)
+Like.all
++----+---------------+-------------+-------------------------+-------------------------+
+| id | likeable_type | likeable_id | created_at              | updated_at              |
++----+---------------+-------------+-------------------------+-------------------------+
+| 1  | User          | 1           | 2023-04-03 08:38:35 UTC | 2023-04-03 08:38:35 UTC |
+| 2  | Forum         | 1           | 2023-04-03 08:39:22 UTC | 2023-04-03 08:39:22 UTC |
+| 3  | Question      | 1           | 2023-04-03 08:39:29 UTC | 2023-04-03 08:39:29 UTC |
+| 4  | Answer        | 1           | 2023-04-03 08:39:36 UTC | 2023-04-03 08:39:36 UTC |
++----+---------------+-------------+-------------------------+-------------------------+
+
+User.first.likes
+Forum.first.likes
+Answer.first.likes
+Question.first.likes

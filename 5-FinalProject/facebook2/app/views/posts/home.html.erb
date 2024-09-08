@@ -1,0 +1,25 @@
+<form action="../posts/new" method="POST" class="pb-3">
+    <div class="form-floating">
+    <textarea class="form-control" name="content" placeholder="Leave a comment here" id="content" style="height: 100px"></textarea>
+    <label for="floatingTextarea2">Comments</label>
+    </div>
+    <div class="d-flex justify-content-end">
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+        <input type="submit" class="btn btn-danger mt-2" value="Comment">
+    </div>
+        <div id="errors" class="text-danger">
+            <% if @errors %>
+                <% @errors.each do |data|%>
+                <p><%= data %> </p>
+                <% end %>
+            <% end %>
+        </div>
+</form>
+
+<h3> Recent posts </h3>
+<% @posts.each do |post|%>
+    <div class="border-bottom p-2">
+        <p><%= post.user.first_name %> <%= post.user.last_name %> <%= post.created_at.strftime("(%m/%d/%Y)") =%></p>
+        <p><%= post.content %> </p>
+    </div>
+<% end %>

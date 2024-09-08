@@ -1,0 +1,33 @@
+<div class="row pt-5">
+    <div class="col-6">
+
+    </div>
+    <div class="col-5">
+        <form action="/login_process" method="POST" class="mb-3">
+            <div class="row g-3 align-items-center mb-3">
+                <div class="col-4">
+                    <label for="email" class="col-form-label">Email Address:</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" id="email" name="email"class="form-control" aria-labelledby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-4">
+                    <label for="inputPassword" class="col-form-label">Password:</label>
+                </div>
+                <div class="col-8">
+                    <input type="password" id="inputPassword" name="password" class="form-control" aria-labelledby="passwordHelpInline">
+                </div>
+            </div>
+            <div class="row text-center mt-3">
+                    <span id="notice" class="form-text text-danger col">
+                    <%= notice %>
+                    </span>
+            </div>
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+            <input type="submit" value="Log In" class= "btn btn-primary form-control">
+        </form>
+        <a href="users/new">Create new account</a>
+    </div>
+</div>

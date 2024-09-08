@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Dynamically add a title -->
+  <title><%= yield :title %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <!-- Dynamically add some Javascript -->
+  <script type="text/javascript">
+      <%= yield :some_javascript %>
+  </script>  
+</head>
+<body>
+<%= yield %>
+</body>
+</html>

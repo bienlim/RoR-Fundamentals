@@ -1,0 +1,42 @@
+
+<%= content_for :left_column do%>
+    <h1>Users#index</h1>
+    <p>Find me in app/views/users/index.html.erb</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Favorite Language</th>
+            </tr>
+        </thead>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.favorite_language %></td>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<%= content_for :right_column do%>
+    <h1>Users#new</h1>
+    <p>Find me in app/views/users/new.html.erb</p>
+<div class="d-flex flex-row-reverse">
+    <a href="../posts/index" class="btn btn-light"> View Posts </a>
+</div>
+<form action="/users" method="post">
+<label class="form-control mt-2"> First name
+    <input type="text" name="user[first_name]" class="form-control">
+</label>
+<label class="form-control mt-2"> last name
+    <input type="text" name="user[last_name]" class="form-control">
+</label>
+<label class="form-control mt-2"> Lavorite language
+<input type="text" name="user[favorite_language]" class="form-control">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+</label>
+<input type="submit" value="Add User" class="btn btn-primary mt-2">
+</form>
+<% end %>

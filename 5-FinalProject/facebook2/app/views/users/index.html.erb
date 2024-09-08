@@ -1,0 +1,31 @@
+<div class="row">
+    <h2> <%= @current_user.first_name =%> <%= @current_user.last_name =%></h2>
+    <p> Member since <%= @current_user.created_at.strftime("%B %d, %Y") =%>
+</div>
+
+<div class="row pt-2">
+    <div class="col-5 ">
+        <h4>Friends</h4>
+        <% @friends.each do |friend| %>
+          <p>
+            <a href= <%= "../users/#{friend.id}" %> > <%= friend.first_name %> <%= friend.last_name %> </a>
+            <a href= <%= "../remove/#{friend.id}" %>> 
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-dash-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+            </a>
+          </p>
+        <% end %>
+    </div>
+    <div class="col-5">
+        <h4>People you may know</h4>
+            <% @notfriends.each do |notfriend| %>
+                <p>
+                    <a href= <%= "../users/#{notfriend.id}" %> > <%= notfriend.first_name %> <%= notfriend.last_name %> </a>  
+                </p>
+            <% end %>
+        <ul>
+        </ul>
+    </div>
+</div>

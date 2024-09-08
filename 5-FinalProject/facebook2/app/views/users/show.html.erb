@@ -1,0 +1,16 @@
+<div class="row">
+    <h2> <%= @set_user.first_name =%> <%= @set_user.last_name =%> <a href=<%= "../add/#{@set_user.id}"%> class='<%= "btn btn-danger #{@is_friend}" %>'> Add friend</a></h2>
+    <p> Member since <%= @set_user.created_at.strftime("%B %d, %Y") =%>
+</div>
+
+<div class="row pt-2">
+    <div class="col-5 ">
+        <h4>Friends</h4>
+        <% @friends.each do |friend| %>
+          <p>
+            <a href= <%= "../users/#{friend.id}" %> > <%= friend.first_name %> <%= friend.last_name %> </a>
+          </p>
+        <% end %>
+    </div>
+
+</div>
